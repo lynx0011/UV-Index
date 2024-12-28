@@ -4,11 +4,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: system-ui;
 }
 
 .main {
-    background-color: red;
     height: 300px;
     width: 80%;
     height: 100%;
@@ -18,31 +17,77 @@ body {
 }
 
 .container {
-    background-color: green;
     height: 300px;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 h1 {
     margin-bottom: 20px;
 }
 
+.uv {
+    color: purple;
+}
+
 form {
     width: 100%;
-    background-color: pink;
+    max-width: 400px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100px;
+    position: absolute;
+    bottom: 35px;
+}
+
+p {
+    margin: 10px 0 0 0;
+    max-width: 400px;
+}
+
+.input {
+    position: relative;
+}
+
+#l1 {
+    position: absolute;
+    top: -18px;
+    left: 5px;
+    font-size: 0.8rem;
 }
 
 input {
-    width: 100%;
+    width: 94%;
     max-width: 400px;
     height: 30px;
     border-radius: 5px;
     outline: none;
     border-style: solid;
     padding: 5px 10px;
+}
+
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    height: 50px;
+    padding: 5px 10px;
+    width: 49%;
+    font-size: 1rem;
+}
+
+button.use {
+    
+}
+
+button.sub {
+    
 }

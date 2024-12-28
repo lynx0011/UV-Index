@@ -17,23 +17,26 @@ app.get("/", (req, res) => {
 app.post("/submit", async (req, res) => {
     let latitude = req.body.latitude
     let longitude = req.body.longitude
-    const result = await axios.get("https://api.openuv.io/api/v1/uv?", {
-        params: {
+    try {
+        const result = await axios.get("https://api.openuv.io/api/v1/uv?", {
+            params: {
+                lat: latitude,
+                lng: longitude
+            },
+            headers: {
+                "x-access-token" : apiKey
+            }
+        });
+        data =  {
+            uvIndex: Math.round(result.data.result.uv),
             lat: latitude,
             lng: longitude
-        },
-        headers: {
-            "x-access-token" : apiKey
-        }
-    });
-    data =  {
-        uvIndex: Math.round(result.data.result.uv),
-        lat: latitude,
-        lng: longitude
-    };
-    console.log(data.uvIndex)
-    res.redirect("/");
-
+        };
+        res.redirect("/");
+    } catch (err) {
+        console.error(err.message)
+        res.render("index.ejs", { err: err.message})
+    }
 });
 
 app.listen(port, () => {
