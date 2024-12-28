@@ -7,15 +7,6 @@ body {
     font-family: system-ui;
 }
 
-.main {
-    height: 300px;
-    width: 80%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .container {
     height: 300px;
     width: 80%;
@@ -45,9 +36,24 @@ form {
     bottom: 35px;
 }
 
-p {
+.output {
     margin: 10px 0 0 0;
     max-width: 400px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    margin: 10px 0 0 0;
+    max-width: 400px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.prompt {
+    color: green;
+    font-weight: bold
 }
 
 .input {
@@ -56,7 +62,7 @@ p {
 
 #l1 {
     position: absolute;
-    top: -18px;
+    top: -20px;
     left: 5px;
     font-size: 0.8rem;
 }

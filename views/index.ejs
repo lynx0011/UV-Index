@@ -7,20 +7,27 @@
         <title>UV Index App</title>
     </head>
     <body>
-        <div class="main">
-            <div class="container">
+        <div class="container">
+            <% if (locals.data) {%>
+                <h1><span class="uv">UV</span>[<%= data.uv %>] App</h1>
+                <p class="output"><span class="prompt">>></span> <%= data.res %></p>
+            <% } else if (locals.err) {%>
+                <h1><span class="uv">UV</span>[Error] App</h1>
+                <p class="error"><span class="prompt">>></span> <%= err.message %></p>
+            <% } else { %>
                 <h1><span class="uv">UV</span>[Index] App</h1>
-                <p>Output should be shown here.</p>
-                <form action="/submit" method="post">
-                    <div class="input">
-                        <label for="i1" id="l1">Enter your location</label>
-                        <input type="text" placeholder="e.g. 20.11, -49.021" name="loc" id="i1">
-                    </div>
-                    <div class="buttons">
-                        <button type="submit" class="use">Use my own location</button>
-                        <button type="submit" class="sub">Submit</button>
-                    </div>
-                </form>
-            </div>
+                <p class="output"><span class="prompt">>></span> Output should be shown here.</p>
+            <% } %>
+            <form action="/submit" method="post">
+                <div class="input">
+                    <label for="i1" id="l1">Enter your location</label>
+                    <input type="text" placeholder="e.g. 20.11, -49.021" name="loc" id="i1">
+                </div>
+                <div class="buttons">
+                    <button class="use">Use my own location</button>
+                    <button type="submit" class="sub">Submit</button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
