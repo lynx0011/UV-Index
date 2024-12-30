@@ -21,13 +21,16 @@
             <form action="/submit" method="post">
                 <div class="input">
                     <label for="i1" id="l1">Enter your location</label>
-                    <input type="text" placeholder="e.g. 20.11, -49.021" name="loc" id="i1">
+                    <input type="text" placeholder="e.g. 12.8797, 121.7740" name="loc" id="i1">
                 </div>
                 <div class="buttons">
-                    <button class="use">Use my own location</button>
+                    <button type="button" class="use">Use my own location</button>
                     <button type="submit" class="sub">Submit</button>
                 </div>
             </form>
         </div>
     </body>
+    <script src="function.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

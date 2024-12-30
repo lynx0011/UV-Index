@@ -52,7 +52,6 @@ form {
 }
 
 .prompt {
-    color: green;
     font-weight: bold
 }
 
@@ -75,6 +74,10 @@ input {
     outline: none;
     border-style: solid;
     padding: 5px 10px;
+}
+
+input::placeholder {
+    font-style: italic;
 }
 
 .buttons {
